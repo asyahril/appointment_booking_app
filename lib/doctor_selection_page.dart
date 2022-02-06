@@ -1,3 +1,4 @@
+import 'package:appointment_booking_app/appointment_page.dart';
 import 'package:appointment_booking_app/data_set.dart';
 import 'package:appointment_booking_app/doctor.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,14 @@ class _DoctorSelectionPageState extends State<DoctorSelectionPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.speciality ?? 'All Specialities'),
+        automaticallyImplyLeading: false,
+        leading: TextButton(
+          child: const Text('Back'),
+          style: TextButton.styleFrom(primary: Theme.of(context).colorScheme.onPrimary),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -43,7 +52,9 @@ class _DoctorSelectionPageState extends State<DoctorSelectionPage> {
                     ElevatedButton(
                       child: const Text('Make Appointment'),
                       onPressed: () {
-
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => AppointmentPage(doctor: item),
+                        ));
                       },
                     ),
                   ],

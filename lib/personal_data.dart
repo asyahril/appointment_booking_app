@@ -1,7 +1,7 @@
 class PersonalData {
   String? name;
   String? address;
-  DateTime? dob;
+  String? dob;
   String? gender;
   String? email;
   String? phone;

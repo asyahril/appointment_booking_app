@@ -38,9 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: SingleChildScrollView(
         child: Container(
           alignment: Alignment.topCenter,
@@ -50,10 +47,21 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text('Mayjen Sungkono', textAlign: TextAlign.center),
+                const Text('Mayjen Sungkono',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                ),
                 const Text('Surabaya', textAlign: TextAlign.center),
+                const Text(''),
                 Text(DateFormat('E, d MMM yyyy').format(DateTime.now())),
-                const Text('Hi, Silvina Ratna Putri'),
+                const Text('Hi, Silvina Ratna Putri',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+                const Text(''),
                 Card(
                   child: Column(
                     children: [
@@ -72,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               onTap: () {
                                 Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) => DoctorSelectionPage(speciality: item)
+                                    builder: (context) => DoctorSelectionPage(speciality: item),
                                 ));
                               },
                             ),
@@ -85,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: const Text('See All'),
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(
-                                builder: (context) => const DoctorSelectionPage()
+                              builder: (context) => const DoctorSelectionPage(),
                             ));
                           },
                         ),
