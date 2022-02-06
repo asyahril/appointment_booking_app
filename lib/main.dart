@@ -42,67 +42,64 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           alignment: Alignment.topCenter,
           margin: const EdgeInsets.all(10.0),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 800),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const Text('Mayjen Sungkono',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Text('Mayjen Sungkono',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
                 ),
-                const Text('Surabaya', textAlign: TextAlign.center),
-                const Text(''),
-                Text(DateFormat('E, d MMM yyyy').format(DateTime.now())),
-                const Text('Hi, Silvina Ratna Putri',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
+              ),
+              const Text('Surabaya', textAlign: TextAlign.center),
+              const Text(''),
+              Text(DateFormat('E, d MMM yyyy').format(DateTime.now())),
+              const Text('Hi, Silvina Ratna Putri',
+                style: TextStyle(
+                  fontSize: 20,
                 ),
-                const Text(''),
-                Card(
-                  child: Column(
-                    children: [
-                      ListTile(
-                        title: const Text('Specialities'),
-                        subtitle: Wrap(
-                          alignment: WrapAlignment.center,
-                          children: _specialityList.map((item) => Card(
-                            child: InkWell(
-                              child: Container(
-                                width: 100.0,
-                                height: 100.0,
-                                alignment: Alignment.bottomCenter,
-                                margin: const EdgeInsets.all(10.0),
-                                child: Text(item!),
-                              ),
-                              onTap: () {
-                                Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) => DoctorSelectionPage(speciality: item),
-                                ));
-                              },
+              ),
+              const Text(''),
+              Card(
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: const Text('Specialities'),
+                      subtitle: Wrap(
+                        alignment: WrapAlignment.center,
+                        children: _specialityList.map((item) => Card(
+                          child: InkWell(
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              alignment: Alignment.bottomCenter,
+                              margin: const EdgeInsets.all(10.0),
+                              child: Text(item!),
                             ),
-                          )).toList(),
-                        ),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) => DoctorSelectionPage(speciality: item),
+                              ));
+                            },
+                          ),
+                        )).toList(),
                       ),
-                      Container(
-                        alignment: Alignment.bottomRight,
-                        child: TextButton(
-                          child: const Text('See All'),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) => const DoctorSelectionPage(),
-                            ));
-                          },
-                        ),
+                    ),
+                    Container(
+                      alignment: Alignment.bottomRight,
+                      child: TextButton(
+                        child: const Text('See All'),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => const DoctorSelectionPage(),
+                          ));
+                        },
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
